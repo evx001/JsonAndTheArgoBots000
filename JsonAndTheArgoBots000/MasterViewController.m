@@ -27,6 +27,13 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+
+    NSURL *url = [NSURL URLWithString:@"http://www.pluralsight.com/odata/Courses"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *responce, NSData *data, NSError *error){
+
+        // parse here
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
